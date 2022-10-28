@@ -1,0 +1,46 @@
+Data Augmentation is a technique of creating new data from existing data by applying some transformations. It expands the size of train dataset. 
+Training the neural network on more data leads to achieving higher accuracy. These transformations include many operations from the field of 
+image manipulations, like flips, rotate at a various angle, shifts, zooms and many more. Neural networks would not distinguish the augmented image.
+Keras’ ImageDataGenerator class allows the users to perform image augmentation while training the model. ImageDataGenerator class function provide 
+a range of transformations.
+
+The main difference between training data and testing data is that training data is the subset of original data that is used to train the machine learning model, 
+whereas testing data is used to check the accuracy of the model. The training dataset is generally larger in size compared to the testing dataset.
+
+flow_from_directory() function generates batches of augmented data located at specific directory of a disk. Images in the directory are stored in 
+subdirectories with respect to their class.
+target_size is the size of your input images, every image will be resized to this size. 
+color_mode: if the image is either black and white or grayscaleset “grayscale” or if the image has three color channels, set “rgb”. 
+batch_size: No. of images to be yielded from the generator per batch or no of images will be used in one iteration, or no of images passed through the network
+at one time
+class_mode: "categorical". Determines the type of label arrays that are returned: "categorical" will be 2D one-hot encoded labels.
+one-hot enocoding where we change the input/output variables from one form to another, like here we convert "Angry" to 0. The prediction in output layer
+will consist of 0,1,2 etc rather than strings like "Angry", "disgust".
+
+augmenting - expanding
+
+Training/Test/Validation Dataset
+
+validation dataset is used for hyperparametric tuning.
+
+Sequential() model is a model where layers are added in sequence one above another in a stack. Two models cannot share the same layer
+So, sequential is our model architecture (not vgg)
+
+
+You have a grayscale image n×m×1 and it passes through the first convolution layer (which has 10 filters). 
+This layer will perform the convolution operation on the input image 10 times independently and produce 10 feature maps, i.e. an output tensor of n×m×10. 
+Now this in fed into the second convolution layer, which again has 10 filters. For each filter the layer will perform the convolution operation on the 10 
+input feature maps independently and will sum the corresponding pixels together to form a n×m×1 feature map. It will perform this procedure 10 times and 
+generate an output tensor of n×m×10.
+
+OpenCL (Open Computing Language) is the open standard for parallel programming. Using OpenCL, one can use the GPU for parallel computing tasks other 
+than just for graphics programming. Once can also use DSP's, FPGA's and other types of processors using OpenCL.
+setUserOpenCL(False) disables the use of GPU.
+
+fit_generator() function is used to train the model
+Epoch: one full cycle through the training dataset. 
+Number of Steps per Epoch = (Total Number of Training Samples) / (Batch Size)
+
+all the info abt training and hyperparameters can be found at : https://keras.io/api/models/model_training_apis/
+
+

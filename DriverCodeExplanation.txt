@@ -1,0 +1,48 @@
+What are Haar Cascades?
+Haar cascade is an algorithm that can detect objects in images, irrespective of their scale in image and location.
+This algorithm is not so complex and can run in real-time. We can train a haar-cascade detector to detect various 
+objects like cars, bikes, buildings, fruits, etc.
+Haar cascade uses the cascading window, and it tries to compute features in every window and classify whether 
+it could be an object. For more details on its working, refer to this link.
+
+
+cascadeClassifier() is a method which is used to classify data.
+
+
+model_from_json() parses a JSON model configuration string and returns a model instance.
+
+
+cv2.cvtColor() method is used to convert an image from one color space to another. Here it converts the frame
+to grayscale image
+
+
+detectMultiScale(finalframe, scaleFactor=1.3, minNeighbors=5) is used to run the model over image and detect the
+faces, it then returns a list of positions where faces are detected
+scaleFactor : Parameter specifying how much the image size is reduced at each image scale.
+minNeighbors : Parameter specifying how many neighbors each candidate rectangle should have inorder to retain it. 
+This parameter will affect the quality of the detected faces: higher value results in less detections but 
+with higher quality. We're using 5 in the code.
+
+
+roi is region of interest, here we crop roi from the frame and the region of interest is ran on network to predict
+the emotion
+
+
+np.expand_dims(img, axis = 0) method is used to expand the dimensions of a array, like from 2D to 3D or 3D to 4D
+inorder to make the image eligible for convolution
+
+
+predict() function predicts a label and associated confidence (e.g. distance) for a given input image. returns a
+list of labels with confidenc
+
+
+argmax() function returns the index of the maximum element of a array.
+
+Number of images in each categories
+0              958
+1              111
+2             1024
+3             1774
+4             1233
+5             1247
+6              831
