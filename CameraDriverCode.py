@@ -6,7 +6,7 @@ from keras.models import model_from_json
 
 ################################### LOADING THE FILES ####################################
 # loading the face detection classfier
-face_recognizer = cv2.CascadeClassifier('D:/IIT/Academics/5fth Semester/ECN-343/Project/Project ETE/haarcascade_frontalface_default.xml')
+face_recognizer = cv2.CascadeClassifier('D:/IIT/Academics/5fth Semester/ECN-343/Project/Project ETE/haarcascade/haarcascade_frontalface_default.xml')
 
 # Opening and reading the model files
 modelfile = open('D:/IIT/Academics/5fth Semester/ECN-343/Project/Project ETE/model/structure.json', "r")

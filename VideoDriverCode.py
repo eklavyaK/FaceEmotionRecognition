@@ -6,7 +6,7 @@ from keras.models import model_from_json
 
 ################################### LOADING THE FILES ####################################
 # loading the face detection classfier
-face_recognizer = cv2.CascadeClassifier('D:/IIT/Academics/5fth Semester/ECN-343/Project/Project ETE/haarcascade_frontalface_default.xml')
+face_recognizer = cv2.CascadeClassifier('D:/IIT/Academics/5fth Semester/ECN-343/Project/Project ETE/haarcascade/haarcascade_frontalface_default.xml')
 
 # Opening and reading the model files
 modelfile = open('D:/IIT/Academics/5fth Semester/ECN-343/Project/Project ETE/model/structure.json', "r")
@@ -49,7 +49,7 @@ while True:
         # drawing the rectangle on the region of interest on the frame
         cv2.rectangle(img, (x, y-50), (x+w, y+h+5), (0, 255, 0), 4)
 
-        #getting the region of interest for running the network on it
+        # getting the region of interest for running the network on it
         region_of_interest = finalframe[y:y + h, x:x + w]
         region = np.expand_dims(np.expand_dims(cv2.resize(region_of_interest, (48, 48)), -1), 0)
 
