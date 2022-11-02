@@ -77,4 +77,4 @@ with open("structure.json", "w") as json_file:
 
 # saving the weights in .h5 file
 network.save_weights('weights.h5')
-#############################################33 END OF THE PROGRAM #############################################
+############################################# END OF THE PROGRAM #############################################
